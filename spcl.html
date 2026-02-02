@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Subhasmita Jena | Portfolio</title>
+
+<style>
+/* ===== RESET ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+body {
+    background: #f4f6f8;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* ===== HEADER & NAV ===== */
+header {
+    background: #1e1e2f;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar {
+    max-width: 1100px;
+    margin: auto;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: #fff;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.nav-links a.active,
+.nav-links a:hover {
+    color: #00adb5;
+}
+
+/* ===== HAMBURGER ===== */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background: #fff;
+    margin: 4px 0;
+    border-radius: 2px;
+    transition: 0.3s;
+}
+
+/* Cross animation */
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* ===== SECTIONS ===== */
+.section {
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.light {
+    background: #f0f0f0;
+}
+
+.section h2 {
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+/* ===== HOME ===== */
+.home {
+    background: #fff;
+}
+
+.profile-img {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    border: 4px solid #00adb5;
+    margin-bottom: 20px;
+}
+
+.home span {
+    color: #00adb5;
+}
+
+/* ===== BUTTON ===== */
+.btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 25px;
+    background: #00adb5;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 6px;
+}
+
+.btn:hover {
+    background: #028a91;
+}
+
+/* ===== SKILLS ===== */
+.skills-list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    margin: 15px 0 30px;
+}
+
+.skills-list li {
+    background: #1e1e2f;
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 14px;
+}
+
+/* ===== CARD ===== */
+.card {
+    background: #fff;
+    max-width: 700px;
+    margin: 20px auto;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    text-align: left;
+}
+
+/* ===== CONTACT ===== */
+.contact-form {
+    max-width: 450px;
+    margin: 30px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 12px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 15px;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: #00adb5;
+}
+
+/* ===== FOOTER ===== */
+footer {
+    background: #1e1e2f;
+    color: #fff;
+    text-align: center;
+    padding: 15px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 65px;
+        right: 0;
+        width: 100%;
+        background: #1e1e2f;
+        flex-direction: column;
+        text-align: center;
+        display: none;
+        padding: 20px 0;
+    }
+
+    .nav-links.show {
+        display: flex;
+    }
+
+    .profile-img {
+        width: 130px;
+        height: 130px;
+    }
+
+    .section h2 {
+        font-size: 26px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<nav class="navbar">
+    <h1 class="logo">Subhasmita</h1>
+
+    <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <ul class="nav-links" id="navLinks">
+        <li><a href="#home" class="active">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
+</header>
+
+<section id="home" class="section home">
+    <img src="images/cv pic...jpg" class="profile-img">
+    <h2>Hi, I'm <span>Subhasmita Jena</span> 👋</h2>
+    <p>MCA Fresher | Aspiring Software Developer</p>
+    <a href="SUBHASMITA JENA.pdf" class="btn" download>Download CV</a>
+</section>
+
+<section id="about" class="section light">
+    <h2>About Me</h2>
+    <p>I am an MCA fresher passionate about web development and software engineering.</p>
+    <p>📍 Bhubaneswar | 🗣 Odia, English, Hindi</p>
+</section>
+
+<section id="skills" class="section">
+    <h2>Skills</h2>
+    <ul class="skills-list">
+        <li>Python</li>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+        <li>Software Engineering</li>
+        <li>Operating System</li>
+    </ul>
+</section>
+
+<section id="experience" class="section light">
+    <h2>Education & Experience</h2>
+
+    <div class="card">
+        <h3>Education</h3>
+        <p>MCA – Einstein Academy (2024–Present)</p>
+        <p>B.Sc Botany – Utkal University</p>
+    </div>
+
+    <div class="card">
+        <h3>Internships</h3>
+        <p>Python Intern – CODESOFT</p>
+        <p>Python Intern – LIT</p>
+    </div>
+</section>
+
+<section id="contact" class="section">
+    <h2>Contact Me</h2>
+
+    <form 
+  action="https://formspree.io/f/xojlnqla"
+  method="POST"
+  class="contact-form"
+>
+    <input type="text" name="name" placeholder="Your Name" required>
+
+    <input type="email" name="email" placeholder="Your Email" required>
+
+    <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+
+    <button type="submit" class="btn">Send Message</button>
+    <input type="hidden" name="_redirect" value="https://yourwebsite.com/thankyou.html">
+
+</form>
+
+</section>
+
+<footer>
+    <p>© 2026 Subhasmita Jena | Portfolio</p>
+</footer>
+
+<script>
+const hamburger = document.getElementById("hamburger");
+const navLinks = document.getElementById("navLinks");
+const menuLinks = document.querySelectorAll(".nav-links a");
+const sections = document.querySelectorAll(".section");
+
+/* Hamburger toggle */
+hamburger.addEventListener("click", () => {
+    hamburger.classList.toggle("active");
+    navLinks.classList.toggle("show");
+});
+
+/* Close menu on link click */
+menuLinks.forEach(link => {
+    link.addEventListener("click", () => {
+        hamburger.classList.remove("active");
+        navLinks.classList.remove("show");
+    });
+});
+
+/* Smooth scroll */
+menuLinks.forEach(link => {
+    link.addEventListener("click", e => {
+        e.preventDefault();
+        document.querySelector(link.getAttribute("href"))
+            .scrollIntoView({ behavior: "smooth" });
+    });
+});
+
+/* Scroll reveal */
+sections.forEach(sec => {
+    sec.style.opacity = "0";
+    sec.style.transform = "translateY(40px)";
+    sec.style.transition = "0.6s ease";
+});
+
+window.addEventListener("scroll", () => {
+    sections.forEach(sec => {
+        if (sec.getBoundingClientRect().top < window.innerHeight - 120) {
+            sec.style.opacity = "1";
+            sec.style.transform = "translateY(0)";
+        }
+    });
+});
+</script>
+
+</body>
+</html>
